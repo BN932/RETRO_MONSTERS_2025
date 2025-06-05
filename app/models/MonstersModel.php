@@ -13,7 +13,7 @@ function findAll(PDO $connexion, int $limit): array {
 }
 function findOneById(PDO $connexion, int $id) : array {
     /*Ici viennent les requêtes SQL*/
-    $sql = "SELECT monsters.*, monster_types.name AS         type_name
+    $sql = "SELECT monsters.*, monster_types.name AS type_name
             FROM monsters
             JOIN monster_types ON monsters.type_id = monster_types.id
             WHERE monsters.id = :id;";

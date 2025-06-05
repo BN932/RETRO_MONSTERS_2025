@@ -1,6 +1,6 @@
 <!-- Section Monstre Aléatoire -->
 <section class="mb-20">
-    <?php include '../app/views/monsters/randomOne.php';?>
+    <?php include '../app/views/monsters/show.php';?>
 </section>
 <!-- Section Derniers monstres -->
 <section class="mb-20">
