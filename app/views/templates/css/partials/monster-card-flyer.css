@@ -1,0 +1,3 @@
+.monster-card[data-monster-type="volant"] {
+        background: linear-gradient(to right, #2e5063, #457791);
+      }
