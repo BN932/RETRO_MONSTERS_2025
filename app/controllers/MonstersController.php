@@ -20,3 +20,12 @@ function showAction(PDO $connexion, int $id): void {
     include '../app/views/monsters/show.php';
     $content = ob_get_clean();
 }
+function showResultNameSearch(PDO $connexion, string $monsterName): void {
+    include '../app/models/MonstersModel.php';
+    $monster = MonstersModel\searchByName($connexion, $monsterName);
+
+    global $content;
+    ob_start();
+    include '../app/views/monsters/show.php';
+    $content = ob_get_clean();
+}

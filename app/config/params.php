@@ -2,6 +2,7 @@
 
 // Initialisation des zones dynamiques
 $content = "";
+$types_rareties = "";
 
 // Paramètres de connexion
 define('DB_HOST', 'localhost');

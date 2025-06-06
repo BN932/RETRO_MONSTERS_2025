@@ -2,14 +2,24 @@
 
 use \App\Controllers\MonstersController;
 
-include_once '../app/controllers/MonstersController.php';
-
-switch ($_GET['monsters']) :
+if(isset($_POST['texte'])) :
+    include_once '../app/controllers/MonstersController.php';
+    include_once '../app/controllers/PagesController.php';
+    MonstersController\showResultNameSearch($connexion, $_POST['texte']);
+    \App\Controllers\PagesController\filtersAction($connexion);
+else :
+    include_once '../app/controllers/MonstersController.php';
+    include_once '../app/controllers/PagesController.php';
+    switch ($_GET['monsters']) :
     
-    case 'show':
-        MonstersController\showAction($connexion, $_GET['id']);
-    break;
-    default:
-        MonstersController\indexAction($connexion, 10);
-    break;
-endswitch;
+        case 'show':
+            MonstersController\showAction($connexion, $_GET['id']);
+            \App\Controllers\PagesController\filtersAction($connexion);
+        break;
+        default:
+            MonstersController\indexAction($connexion, 10);
+            \App\Controllers\PagesController\filtersAction($connexion);
+        break;
+    endswitch;
+
+endif;

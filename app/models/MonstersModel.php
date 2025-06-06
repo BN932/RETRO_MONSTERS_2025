@@ -22,3 +22,9 @@ function findOneById(PDO $connexion, int $id) : array {
     $rs->execute();
     return $rs->fetch(PDO::FETCH_ASSOC);
 }
+
+function searchByName(PDO $connexion, string $monsterName) {
+    $sql = "CALL search_by_name('$monsterName');";
+    $rs = $connexion->query($sql);
+    return $rs->fetch(PDO::FETCH_ASSOC);
+}
