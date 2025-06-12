@@ -11,7 +11,7 @@ function findAll(PDO $connexion, int $limit): array {
     $rs = $connexion->query($sql);
     return $rs->fetchAll(PDO::FETCH_ASSOC);
 }
-function findOneById(PDO $connexion, int $id) : array {
+function findOneById(PDO $connexion, int $id) {
     /*Ici viennent les requêtes SQL*/
     $sql = "SELECT monsters.*, monster_types.name AS type_name
             FROM monsters
@@ -23,8 +23,8 @@ function findOneById(PDO $connexion, int $id) : array {
     return $rs->fetch(PDO::FETCH_ASSOC);
 }
 
-function searchByName(PDO $connexion, string $monsterName) {
-    $sql = "CALL search_by_name('$monsterName');";
+function searchByName(PDO $connexion, string $searchWord) {
+    $sql = "CALL search_by_name('$searchWord');";
     $rs = $connexion->query($sql);
-    return $rs->fetch(PDO::FETCH_ASSOC);
+    return $rs->fetchAll(PDO::FETCH_ASSOC);
 }

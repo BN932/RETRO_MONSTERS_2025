@@ -18,10 +18,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
     />
+    <link rel="stylesheet" href="css/partials/node.css"/>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link
       rel="stylesheet"
-      href="css/partials/node.css"
+      href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js"></script>
 

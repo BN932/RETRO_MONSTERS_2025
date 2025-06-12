@@ -1,12 +1,13 @@
 <?php
 
 use \App\Controllers\MonstersController;
+use \App\Controllers\PagesController;
 
 if(isset($_POST['texte'])) :
     include_once '../app/controllers/MonstersController.php';
     include_once '../app/controllers/PagesController.php';
     MonstersController\showResultNameSearch($connexion, $_POST['texte']);
-    \App\Controllers\PagesController\filtersAction($connexion);
+    PagesController\filtersAction($connexion);
 else :
     include_once '../app/controllers/MonstersController.php';
     include_once '../app/controllers/PagesController.php';
@@ -18,7 +19,7 @@ else :
         break;
         default:
             MonstersController\indexAction($connexion, 10);
-            \App\Controllers\PagesController\filtersAction($connexion);
+            PagesController\filtersAction($connexion);
         break;
     endswitch;
 
